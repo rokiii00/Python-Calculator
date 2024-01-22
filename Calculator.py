@@ -1,14 +1,25 @@
-def add(x, y):
-    return x + y
+def add():
+    num1 = float(input("Enter Number 1: "))
+    num2 = float(input("Enter Number 2: "))
+    return num1 + num2
 
-def sub(x, y):
-    return x - y
+def sub():
+    num1 = float(input("Enter Number 1: "))
+    num2 = float(input("Enter Number 2: "))
+    return num1 - num2
 
-def mult(x, y):
-    return x * y
+def mult():
+    num1 = float(input("Enter Number 1: "))
+    num2 = float(input("Enter Number 2: "))
+    return num1 * num2
 
-def div(x, y):
-    return x / y
+def div():
+    num1 = float(input("Enter Number 1: "))
+    num2 = float(input("Enter Number 2: "))
+    try:
+        return num1 / num2
+    except ZeroDivisionError:
+        return (f"{num1} / {num2} = Error: Division by zero")
 
 '''
 num1 = 2
@@ -21,8 +32,20 @@ print(div(num1, num2))
 '''
 
 while True:
+    print("Choose an operation:")
+    op = input(" + Addition\n - Subtraction\n * Multiply\n / Divide\n" )
 
-    num1 = float(input("Enter First Number: "))
-    num2 = float(input("Enter Second Number:"))
-    
-    break
+    if op == "+":
+        print(add())
+    elif op == "-":
+        print(sub())
+    elif op == "*":
+        print(mult())
+    elif op == "/":
+        print(div())
+    else:
+        print("Invalid Operation")
+
+    inp = input("Would you like to Continue? [Y]es or [N]o: ").upper()
+    if inp == "N":
+        break
